@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotBang — Bang! online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HOME / JOIN SCREEN ============ -->
+  <div id="home-screen" class="screen">
+    <div class="home-card">
+      <h1>🤠 NotBang</h1>
+      <p class="subtitle">The Wild West card game <em>Bang!</em> — play with 3–7 friends in your browser.</p>
+      <input id="name-input" type="text" maxlength="20" placeholder="Your name" autocomplete="off">
+      <div class="home-actions">
+        <button id="create-btn" class="btn primary">Create game</button>
+        <div class="join-row">
+          <input id="room-input" type="text" maxlength="4" placeholder="CODE" autocomplete="off">
+          <button id="join-btn" class="btn">Join</button>
+        </div>
+      </div>
+      <p id="home-error" class="error-text"></p>
+    </div>
+  </div>
+
+  <!-- ============ LOBBY SCREEN ============ -->
+  <div id="lobby-screen" class="screen hidden">
+    <div class="home-card">
+      <h1>🤠 Saloon lobby</h1>
+      <p class="subtitle">Room code: <span id="lobby-code" class="room-code"></span><br>
+        Share this code with your friends so they can join.</p>
+      <ul id="lobby-players" class="lobby-list"></ul>
+      <button id="start-btn" class="btn primary hidden">Start game</button>
+      <p id="lobby-hint" class="subtitle"></p>
+      <p id="lobby-error" class="error-text"></p>
+    </div>
+  </div>
+
+  <!-- ============ GAME SCREEN ============ -->
+  <div id="game-screen" class="screen hidden">
+    <header id="topbar">
+      <span class="brand">🤠 NotBang</span>
+      <span id="room-label"></span>
+      <span id="deck-info"></span>
+      <span id="turn-label"></span>
+    </header>
+
+    <div id="result-banner" class="hidden"></div>
+
+    <main id="table">
+      <section id="opponents"></section>
+
+      <section id="center">
+        <div id="piles">
+          <div class="pile" id="deck-pile" title="Draw pile"></div>
+          <div class="pile" id="discard-pile" title="Discard pile"></div>
+        </div>
+        <div id="log-panel">
+          <div id="log"></div>
+        </div>
+      </section>
+
+      <section id="prompt-area" class="hidden">
+        <div id="prompt-text"></div>
+        <div id="prompt-buttons"></div>
+      </section>
+
+      <section id="me-area">
+        <div id="me-info"></div>
+        <div id="me-table" class="table-cards"></div>
+        <div id="hand"></div>
+        <div id="me-actions"></div>
+      </section>
+    </main>
+
+    <div id="toast" class="hidden"></div>
+
+    <div id="modal-backdrop" class="hidden">
+      <div id="modal">
+        <div id="modal-title"></div>
+        <div id="modal-body"></div>
+        <div id="modal-buttons"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
